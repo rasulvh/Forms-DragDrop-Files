@@ -1,0 +1,59 @@
+/* .item{
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+}
+
+#drag-elem1{
+    background-color: magenta;
+}
+
+#drag-elem2{
+    background-color: yellow;
+}
+
+#drag-elem3{
+    background-color: red;
+}
+
+.drop-elem{
+    width: 500px;
+    height: 300px;
+    background-color: yellowgreen;
+    float: right;
+    display: flex;
+    justify-content: center;
+} */
+
+
+
+/* .box {
+    width: 600px;
+    height: 400px;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  .box i {
+    font-size: 50px;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .box input {
+    display: none;
+  }
+  
+  i {
+    cursor: pointer;
+  }
+   */
