@@ -6,34 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="./assets/css/bootstrap.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/task.css" />
   </head>
 
   <body>
     <div class="container my-5">
+      <div class="box" draggable="true">
+        <i class="fa-solid fa-cloud-arrow-up"></i>
+        <input type="file" multiple accept="image/*" />
+      </div>
 
-        <div class="box" draggable="true">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
-            <input type="file" multiple>
-        </div>
-
-        <table class="table my-5">
-          <thead>
-            <tr>
-              <th scope="col">Image</th>
-              <th scope="col">Name</th>
-              <th scope="col">Size</th>
-              <th scope="col">Options</th>
-            </tr>
-          </thead>
-          <tbody>
-
-          </tbody>
-        </table>
-
+      <table class="table my-5">
+        <thead>
+          <tr>
+            <th scope="col">Image</th>
+            <th scope="col">Name</th>
+            <th scope="col">Size</th>
+            <th scope="col">Options</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
-
-
 
     <script
       src="https://kit.fontawesome.com/7aa586aaec.js"
@@ -49,6 +43,6 @@
       integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/task.js"></script>
   </body>
 </html>

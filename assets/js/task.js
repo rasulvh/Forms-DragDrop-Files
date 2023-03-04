@@ -15,7 +15,7 @@ upload.addEventListener("change", function (e) {
       tBody.innerHTML += `<tr>
             <td><img src="${event.currentTarget.result}" alt=""></td>
             <td>${file.name}</td>
-            <td>${file.size / 1024} KB</td>
+            <td>${Math.floor(file.size / 1024)} KB</td>
             <td><i class="delete fa-solid fa-trash"></i></td>
             </tr>`;
 
@@ -32,32 +32,33 @@ upload.addEventListener("change", function (e) {
   }
 });
 
-dragArea.ondragover = (e) => {
+dragArea.addEventListener("dragover", function (e) {
   e.preventDefault();
-};
+});
 
-dragArea.ondrop = (e) => {
+dragArea.addEventListener("drop", function (e) {
   e.preventDefault();
 
-  let reader = new FileReader();
+  for (const file of e.dataTransfer.files) {
+    let reader = new FileReader();
 
-  reader.onload = function (event) {
-      console.log(this);
-    tBody.innerHTML += `<tr>
-                <td><img src="${event.currentTarget.result}" alt=""></td>
-                <td>${file.name}</td>
-                <td>${file.size / 1024} KB</td>
-                <td><i class="delete fa-solid fa-trash"></i></td>
-                </tr>`;
+    reader.onload = function (event) {
+      tBody.innerHTML += `<tr>
+            <td><img src="${event.currentTarget.result}" alt=""></td>
+            <td>${file.name}</td>
+            <td>${Math.floor(file.size / 1024)} KB</td>
+            <td><i class="delete fa-solid fa-trash"></i></td>
+            </tr>`;
 
-                
-    let deleteIcons = document.querySelectorAll(".delete");
-    deleteIcons.forEach((icon) => {
-      icon.addEventListener("click", function () {
-        icon.parentNode.parentNode.remove();
-      });    
-    });
-  };
+      let deleteIcons = document.querySelectorAll(".delete");
 
+      deleteIcons.forEach((icon) => {
+        icon.addEventListener("click", function () {
+          icon.parentNode.parentNode.remove();
+        });
+      });
+    };
 
-};
+    reader.readAsDataURL(file);
+  }
+});
